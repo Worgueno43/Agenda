@@ -1,0 +1,42 @@
+<br><br><br>
+<div id="carou" class="carousel slide">
+<ol class="carousel-indicators">
+    <?php 
+    $i=0;
+    foreach($car as $c){
+        if ($i==0){
+            echo '<li data-target="#carou" data-slide-to="'.$i.'" class="active"></li>';
+        }else{
+            echo '<li data-target="#carou" data-slide-to="'.$i.'"></li>';
+        }
+    $i++;
+    }
+    ?>
+</ol>
+<div class="carousel-inner">
+    <?php
+    $i=0;
+    foreach($car as $c){
+        if ($i==0){
+            echo '<div class="carousel-item active">';
+            echo '<img src="/'.WEBROOT2.'/'.WEBROOT3.'/webroot/img/'.$c->IMG.'.jpg" class="d-block w-100" alt="imageCaroussel">';
+            echo '</div>';
+        }else{
+            echo '<div class="carousel-item">';
+            echo '<img class="d-block w-100" src="/'.WEBROOT2.'/'.WEBROOT3.'/webroot/img/'.$c->IMG.'.jpg" alt="imageCaroussel">';
+            echo '</div>';
+        }
+    $i++;
+    }
+    ?>
+
+    <a class="carousel-control-prev" href="#carou" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Precedent</span>
+    </a>
+    <a class="carousel-control-next" href="#carou" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+    </a>
+</div>
+</div>
